@@ -1,0 +1,34 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+
+@foreach (var employee in PopuplateEmployees())
+{
+    <List _employee=@employee />
+}
+
+
+
+@code {
+
+    List<string>? Employees = new List<string>();
+    private List<string> PopuplateEmployees()
+    {
+        Employees = new List<string>
+        {
+            new  string("Faizan"),
+            new string("Javid"),
+            new string("Nayeem"),
+            new string("Umar")
+
+        };
+        return Employees;
+    }
+
+
+}
+
+
+
+

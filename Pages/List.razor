@@ -1,0 +1,37 @@
+﻿
+@if (string.IsNullOrEmpty(_employee))
+{
+    <p>Nothing To Display</p>
+}
+else{
+    <div class="card">
+        <div class="card-title">
+
+        </div>
+        <div class="card-body">
+            @_employee
+            <div>
+                <i class="oi oi-account-login" ></i>
+            </div>
+        </div>
+        <div class="card-footer">
+        </div>
+        <div>
+            <button class="btn btn-danger" @onclick="()=>deleteConfirmation!.Open()"> Delete</button>
+        </div>
+
+    </div>
+
+
+    <DeleteConfirmation @ref="deleteConfirmation" ModalTitle="Delete Confirmation" ModalBody="Do You Really Want To Delete ?" > </DeleteConfirmation>
+}
+
+
+
+@code {
+    [Parameter]
+    public string ? _employee { get; set; }
+
+    public DeleteConfirmation ?deleteConfirmation{ get; set; }
+
+}

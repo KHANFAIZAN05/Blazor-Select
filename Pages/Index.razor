@@ -1,34 +1,31 @@
 ﻿@page "/"
-
 <PageTitle>Index</PageTitle>
 
+<div class="row">
+    <div class="col-12">
+        <div class="row g-3">
+            <div class="col-12 col-sm-6">
 
-@foreach (var employee in PopuplateEmployees())
-{
-    <List _employee=@employee />
-}
+                <Select TValue="string" Items="Items" ShowSearch="true"  />
+            </div>
 
+        </div>
+
+    </div>
+</div>
 
 
 @code {
-
-    List<string>? Employees = new List<string>();
-    private List<string> PopuplateEmployees()
+    private IEnumerable<SelectedItem> Items { get; set; } = new[]
     {
-        Employees = new List<string>
-        {
-            new  string("Faizan"),
-            new string("Javid"),
-            new string("Nayeem"),
-            new string("Umar")
-
-        };
-        return Employees;
-    }
-
-
+        new SelectedItem ("", "Select"),
+        new SelectedItem ("one", "one"),
+        new SelectedItem ("two", "two") ,
+        new SelectedItem ("three", "three") { Active = true },
+        new SelectedItem ("four", "four") ,
+        new SelectedItem ("five", "five") ,
+        new SelectedItem ("six", "six") ,
+    };  
 }
-
-
 
 

@@ -7,4 +7,19 @@
     <RootNamespace>Blazor_Practice</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Compile Remove="wwwroot\css\**" />
+    <Content Remove="Data\**" />
+    <Content Remove="wwwroot\css\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="wwwroot\css\**" />
+    <None Remove="Data\**" />
+    <None Remove="wwwroot\css\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BootstrapBlazor" Version="7.6.2" />
+  </ItemGroup>
+
 </Project>
